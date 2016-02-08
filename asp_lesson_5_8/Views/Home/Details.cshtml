@@ -1,0 +1,28 @@
+﻿@using  asp_lesson_5_8.Models
+@model Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<fieldset>
+    <legend>Информация о студенте</legend>
+
+    <div class="display-label"><b>Имя</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label"><b>Фамилия</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+
+    <div class="display-label"><b>Курсы</b></div>
+    <ul>
+        @foreach (Course c in Model.Courses)
+        {
+            <li>@c.Name</li>
+        }
+    </ul>
+
+</fieldset>
